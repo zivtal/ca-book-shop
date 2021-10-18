@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book-shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="init()">
+    <section class="control">
+        <div class="icons">
+            <img src="img/controls/add.png" onclick="openEditModal()"/>
+        </div>
+        <div class="icons">
+            <img src="img/controls/grid.png" onclick="onClickViewMode('GRID')"/>
+            <img src="img/controls/table.png" onclick="onClickViewMode('TABLE')"/>
+        </div>
+        <div class="icons pages"></div>
+        <label class="sortby">
+            Sort by:
+            <select onchange="onSetSort('by',this.value)">
+                <option value="TITLE">Title</option>
+                <option value="PRICE">Price</option>
+                <option value="RATE">Rate</option>
+            </select>
+            <div class="direction sort" onclick="onSetSort('descending')">⇅</div>
+        </label>
+        <label class="filterby">
+            Filters:
+            <label>
+                Rate
+                <select class="byrate" onchange="onSetFilter('rate',this.value)"></select>
+            </label>
+            <label>
+                Author
+                <select class="byauthor" onchange="onSetFilter('author',this.value)"></select>
+            </label>
+        </label>
+    </section>
+    <section class="books"></section>
+    <section name="#details" class='details'></section>
+    <script src="js/service/storage-service.js"></script>
+    <script src="js/service/shop-service.js"></script>
+    <script src="js/shop-controller.js"></script>
+</body>
+</html>

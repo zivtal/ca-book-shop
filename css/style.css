@@ -1,0 +1,333 @@
+/* @import "./mobile.css" screen and (max-width: 760px);
+@import "./tablet.css" screen and (min-width: 760px) and (max-width: 980px);
+@import "./desktop.css" screen and (min-width: 980px); */
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+textarea {
+  resize: none;
+}
+
+.control {
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  width: 98%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.control .icons {
+  height: 35px;
+  display: flex;
+  padding-right: 10px;
+}
+
+.control img {
+  cursor: pointer;
+  padding-left: 10px;
+  height: 25px;
+  transition: 0.5s;
+}
+
+.control img:hover {
+  transform: scale(115%);
+}
+
+.control .pages {
+  display: flex;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.control .pages .page {
+  position: relative;
+  top: -2px;
+  border-radius: 4px;
+  margin-right: 10px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  background-color: black;
+  border: 3px solid black;
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+}
+
+.control .pages .page:hover {
+  transform: scale(115%);
+}
+
+.control .pages .clicked {
+  color: black;
+  background-color: white;
+}
+
+.control .pages .disabled {
+  cursor: initial;
+  color: gray;
+}
+
+.control .pages .disabled:hover {
+  transform: scale(100%);
+}
+
+.control label {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  display: inline-block;
+}
+
+.control .sortby,
+.control .filterby {
+  position: relative;
+  top: 2px;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding-left: 10px;
+}
+
+.control .filterby label {
+  font-weight: normal;
+  padding-left: 5px;
+}
+
+.control .filterby select {
+  position: relative;
+  top: -1px;
+  font-size: 0.7em;
+  height: 20px;
+}
+
+.control .direction {
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.books {
+  margin: auto;
+  min-width: 200px;
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid white;
+  border-radius: 25px;
+  background-color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.books .preview {
+  user-select: none;
+  text-align: center;
+  border-radius: 10px;
+  width: 150px;
+  height: 250px;
+  margin: 5px;
+  background-color: whitesmoke;
+  transition: 0.5s;
+}
+
+.books .preview:hover {
+  background-color: silver;
+  transform: scale(105%, 105%);
+}
+
+.books .preview .remove {
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 2px;
+  float: right;
+  border: 0px;
+  background-color: transparent;
+}
+
+.books .preview img {
+  display: block;
+  margin-top: 10px;
+  margin-left: 30px;
+  height: 140px;
+  width: 80px;
+  object-fit: contain;
+}
+
+.books .preview h1 {
+  margin: 5px;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.books .preview h2 {
+  margin: 5px;
+  color: rgb(50, 50, 50);
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.books .preview p {
+  margin: 5px;
+  text-align: center;
+  font-size: 0.65em;
+  font-weight: bold;
+}
+
+.books .preview .price {
+  text-decoration: line-through;
+}
+
+.books .preview .stars {
+  margin: auto;
+  font-size: 0.7em;
+}
+
+.books table {
+  font-size: 0.85em;
+  text-align: center;
+  width: 90%;
+}
+
+.books table td {
+  border: 1px solid black;
+  padding: 2px;
+  height: 60px;
+}
+
+.books table tr {
+  transition: 0.5s;
+}
+
+.books table tr:nth-child(2n) {
+  background-color: white;
+}
+
+.books table tr:hover {
+  transform: scale(101%);
+}
+
+.books table .title {
+  text-align: left;
+}
+
+.books table img {
+  height: 100%;
+}
+
+.books table .btn {
+  cursor: pointer;
+  display: block;
+  color: white;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.books table .btn1 {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 6, 158, 1) 0%,
+    rgba(17, 29, 171, 1) 59%,
+    rgba(0, 46, 255, 1) 100%
+  );
+}
+
+.books table .btn2 {
+  background: linear-gradient(
+    180deg,
+    rgba(219, 124, 0, 1) 0%,
+    rgba(198, 135, 26, 1) 59%,
+    rgba(255, 189, 0, 1) 100%
+  );
+}
+
+.books table .btn3 {
+  background: linear-gradient(
+    180deg,
+    rgba(158, 0, 0, 1) 0%,
+    rgba(171, 17, 17, 1) 59%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+.details {
+  border-radius: 25px;
+  min-width: 350px;
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  max-width: 800px;
+  background-color: whitesmoke;
+  border: 10px solid white;
+  padding: 20px;
+}
+
+.details img {
+  object-fit: contain;
+  padding: 10px;
+  margin-top: 30px;
+  float: right;
+  height: 280px;
+  width: 30%;
+}
+
+.details p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.details label {
+  display: block;
+  font-weight: bold;
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.details p span {
+  font-weight: initial;
+}
+
+.details input {
+  width: 70%;
+}
+
+.details textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.details button {
+  cursor: pointer;
+}
+
+.details .close {
+  border: 0px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: transparent;
+  right: 15px;
+}
+
+.details .edit,
+.details .submit {
+  border-radius: 10px;
+  border: 1px solid gray;
+  margin-top: 10px;
+  width: 100%;
+}
