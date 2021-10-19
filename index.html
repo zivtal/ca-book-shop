@@ -8,40 +8,54 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="init()">
-    <section class="control">
-        <div class="icons">
-            <img src="img/controls/add.png" onclick="openEditModal()"/>
-        </div>
-        <div class="icons">
-            <img src="img/controls/grid.png" onclick="onClickViewMode('GRID')"/>
-            <img src="img/controls/table.png" onclick="onClickViewMode('TABLE')"/>
-        </div>
-        <div class="icons pages"></div>
-        <label class="sortby">
-            Sort by:
-            <select onchange="onSetSort('by',this.value)">
-                <option value="TITLE">Title</option>
-                <option value="PRICE">Price</option>
-                <option value="RATE">Rate</option>
-            </select>
-            <div class="direction sort" onclick="onSetSort('descending')">⇅</div>
-        </label>
-        <label class="filterby">
-            Filters:
-            <label>
-                Rate
-                <select class="byrate" onchange="onSetFilter('rate',this.value)"></select>
+    <div class="container">
+        <section class='main-control'>
+            <section class="control">
+                    <div class="icons">
+                        <img src="img/controls/add.png" onclick="openEditModal()"/>
+                    </div>
+                    <div class="icons">
+                        <img src="img/controls/grid.png" onclick="onClickViewMode('GRID')"/>
+                        <img src="img/controls/table.png" onclick="onClickViewMode('TABLE')"/>
+                    </div>
+                    <label class="sortby">
+                        <span data-trans="sort">Sort by:</span>
+                        <select onchange="onSetSort('by',this.value)">
+                            <option data-trans="title" value="TITLE">Title</option>
+                            <option data-trans="price" value="PRICE">Price</option>
+                            <option data-trans="rate" value="RATE">Rate</option>
+                        </select>
+                        <div class="direction sort" onclick="onSetSort('descending')">⇅</div>
+                    </label>
+                    <label class="filterby">
+                        <span data-trans="filters">Filters:</span>
+                        <label>
+                            <span data-trans="rate"> Rate:</span>
+                            <select class="byrate" onchange="onSetFilter('rate',this.value)"></select>
+                        </label>
+                        <label>
+                            <span data-trans="author"> Author</span>
+                            <select class="byauthor" onchange="onSetFilter('author',this.value)"></select>
+                        </label>
+                    </label>
+            <label class="lang">
+                <select onchange="onSetLang(this.value)">
+                    <option value="en">English</option>
+                    <option value="he">עברית</option>
+                </select>
             </label>
-            <label>
-                Author
-                <select class="byauthor" onchange="onSetFilter('author',this.value)"></select>
-            </label>
-        </label>
+        </section>
     </section>
-    <section class="books"></section>
+        <section class="books"></section>
+        <section class="navigate">
+            <div class="icons pages"></div>
+        </section>
+    </div>
     <section name="#details" class='details'></section>
     <script src="js/service/storage-service.js"></script>
     <script src="js/service/shop-service.js"></script>
+    <script src="js/service/i18h-service.js"></script>
     <script src="js/shop-controller.js"></script>
+    <script src="js/i18h-controller.js"></script>
 </body>
 </html>

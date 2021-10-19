@@ -4,7 +4,7 @@ const KEY = 'books';
 
 var gBooks = loadBooks();
 var gPages = {
-    size: 3,    // books per page
+    size: 4,    // books per page
     index: 0,
     total: 0,
 }

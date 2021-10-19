@@ -15,28 +15,43 @@ textarea {
   resize: none;
 }
 
+.container {
+  margin: auto;
+  width: 98%;
+  min-width: 300px;
+}
+
+.main-control {
+  display: flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
 .control {
   user-select: none;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: whitesmoke;
-  width: 98%;
-  margin: auto;
-  margin-bottom: 10px;
+  padding-top: 7px;
+  padding-inline-start: 10px;
+}
+
+.control .lang {
+  padding-top: 2px;
+  padding-inline-start: 15px;
 }
 
 .control .icons {
   height: 35px;
   display: flex;
-  padding-right: 10px;
+  padding-inline-end: 10px;
 }
 
 .control img {
   cursor: pointer;
-  padding-left: 10px;
+  padding-inline-start: 10px;
   height: 25px;
   transition: 0.5s;
 }
@@ -45,18 +60,27 @@ textarea {
   transform: scale(115%);
 }
 
-.control .pages {
-  display: flex;
+.navigate {
+  text-align: center;
+  user-select: none;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.navigate .pages {
+  padding: 4px;
+  display: inline-block;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.3em;
 }
 
-.control .pages .page {
-  position: relative;
-  top: -2px;
+.navigate .pages .page {
   border-radius: 4px;
-  margin-right: 10px;
+  margin-inline-end: 5px;
+  margin-inline-start: 5px;
   text-align: center;
   display: inline-block;
   color: white;
@@ -67,21 +91,21 @@ textarea {
   transition: 0.5s;
 }
 
-.control .pages .page:hover {
+.navigate .pages .page:hover {
   transform: scale(115%);
 }
 
-.control .pages .clicked {
+.navigate .pages .clicked {
   color: black;
   background-color: white;
 }
 
-.control .pages .disabled {
+.navigate .pages .disabled {
   cursor: initial;
   color: gray;
 }
 
-.control .pages .disabled:hover {
+.navigate .pages .disabled:hover {
   transform: scale(100%);
 }
 
@@ -97,12 +121,12 @@ textarea {
   top: 2px;
   font-weight: bold;
   font-size: 0.8em;
-  padding-left: 10px;
+  padding-inline-start: 25px;
 }
 
 .control .filterby label {
   font-weight: normal;
-  padding-left: 5px;
+  padding-inline-start: 5px;
 }
 
 .control .filterby select {
@@ -121,9 +145,6 @@ textarea {
 }
 
 .books {
-  margin: auto;
-  min-width: 200px;
-  width: 98%;
   display: flex;
   flex-wrap: wrap;
   border: 1px solid white;
@@ -161,8 +182,9 @@ textarea {
 
 .books .preview img {
   display: block;
+  margin: auto;
   margin-top: 10px;
-  margin-left: 30px;
+  margin-inline-end: 35px;
   height: 140px;
   width: 80px;
   object-fit: contain;
@@ -282,7 +304,6 @@ textarea {
   object-fit: contain;
   padding: 10px;
   margin-top: 30px;
-  float: right;
   height: 280px;
   width: 30%;
 }
@@ -321,7 +342,6 @@ textarea {
   border-radius: 50%;
   position: absolute;
   background-color: transparent;
-  right: 15px;
 }
 
 .details .edit,
